@@ -49,13 +49,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; KEYMAPS
 (leader
-      "DEL"   'keyboard-quit
+    "DEL"   'keyboard-quit
 
-"f"     '(:ignore t :which-key "files")
-	"f DEL" 'keyboard-quit
-	"f s"   'dired
+    "b"     '(:ignore t :which-key "buffer")
+    "b DEL" 'keyboard-quit
+    "b k"   'kill-buffer
 
-      "b"     'switch-to-buffer
-      "s"     'shell)
+    "e"     'eval-last-sexp
+
+    "f"     '(:ignore t :which-key "find")
+    "f DEL" 'keyboard-quit
+    "f f"   'dired
+
+    "x"     '(:ignore t :which-key "emacs")
+    "x DEL" 'keyboard-quit
+    "x x"   'execute-extended-command
+
+    "s"     'dired)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
