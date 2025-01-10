@@ -30,6 +30,7 @@
 (evil-mode 1)
 
 (require 'which-key)
+(setq which-key-idle-delay 0.125)
 (which-key-mode)
 
 (require 'general)
@@ -49,22 +50,28 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; KEYMAPS
 (leader
-    "DEL"   'keyboard-quit
+    "DEL"     'keyboard-quit
 
-    "b"     '(:ignore t :which-key "buffer")
-    "b DEL" 'keyboard-quit
-    "b k"   'kill-buffer
+    "b"       '(:ignore t :which-key "buffer")
+    "b DEL"   'keyboard-quit
+    "b k"     'kill-buffer
+    "b s"     'switch-to-buffer
 
-    "e"     'eval-last-sexp
+    "c"       '(:ignore t :which-key "cursor")
+    "c c"     'recenter-top-bottom
 
-    "f"     '(:ignore t :which-key "find")
-    "f DEL" 'keyboard-quit
-    "f f"   'dired
+    "e"       'eval-last-sexp
 
-    "x"     '(:ignore t :which-key "emacs")
-    "x DEL" 'keyboard-quit
-    "x x"   'execute-extended-command
+    "f"       '(:ignore t :which-key "find")
+    "f DEL"   'keyboard-quit
+    "f f"     '(:ignore t :which-key "files")
+    "f f DEL" 'keyboard-quit
+    "f f f"   '(lambda () (interactive) (dired default-directory))
 
-    "s"     'dired)
+    "x"       '(:ignore t :which-key "emacs")
+    "x DEL"   'keyboard-quit
+    "x x"     'execute-extended-command
+
+    "s"       'dired)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
